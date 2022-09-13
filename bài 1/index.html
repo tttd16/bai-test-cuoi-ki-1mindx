@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BÀI 1</title>
+  </head>
+  <body>
+    <script>
+      function timSoNguyenTo(n) {
+        let count = 0;
+        for (let i = 0; i <= n; i++) {
+          if (n % i == 0) {
+            count++;
+          }
+        }
+        if (count <= 2) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function soNguyenTo(a, b) {
+        for (let i = a; i <= b; i++) {
+          if (timSoNguyenTo(i)) {
+            document.writeln(i);
+          }
+        }
+      }
+
+      function inSoNguyenTo() {
+        let a = prompt("Nhap a: ");
+        let b = prompt("Nhap b: ");
+        a = parseInt(a);
+        b = parseInt(b);
+        if (a >= b || a <= 1) {
+          alert("a phai nho hon b va lon hon hoac bang 1, moi nhap lai");
+          inSoNguyenTo();
+        } else {
+          soNguyenTo(a, b);
+        }
+      }
+      inSoNguyenTo();
+    </script>
+  </body>
+</html>
